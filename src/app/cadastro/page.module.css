@@ -1,0 +1,90 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 2rem;
+  }
+  
+  .card {
+    background-color: var(--card-bg);
+    width: 100%;
+    max-width: 900px;
+    min-height: 500px;
+    border-radius: 4px; /* O seu Figma tem bordas mais retas aqui */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    display: flex;
+    overflow: hidden;
+  }
+  
+  .formSection, .imageSection {
+    flex: 1;
+    padding: 3.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .title {
+    font-size: 1.4rem;
+    color: #000000;
+    margin-bottom: 2rem;
+    font-weight: 500;
+  }
+  
+  .form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .inputField {
+    width: 100%;
+    padding: 12px 16px;
+    border: none;
+    background-color: #d9d9d9; /* Cor baseada no seu print */
+    border-radius: 4px;
+    font-size: 1rem;
+    color: var(--text-main);
+    outline: none;
+    transition: box-shadow 0.2s;
+  }
+  
+  .inputField::placeholder {
+    color: #888888;
+  }
+  
+  .inputField:focus {
+    box-shadow: 0 0 0 2px var(--primary-blue);
+  }
+  
+  .submitButton {
+    margin-top: 1.5rem;
+    padding: 12px;
+    background-color: #72b5fb; /* Azul claro idêntico ao do seu botão */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-weight: 500;
+    font-size: 1rem;
+    cursor: pointer;
+    width: 160px;
+    transition: background-color 0.2s, transform 0.2s;
+  }
+  
+  .submitButton:hover {
+    background-color: #5a9ce0;
+    transform: translateY(-2px);
+  }
+  
+  .imageSection {
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .illustration {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    object-fit: contain;
+  }

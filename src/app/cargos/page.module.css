@@ -1,0 +1,83 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 2rem;
+  }
+  
+  .card {
+    background-color: var(--card-bg);
+    width: 100%;
+    max-width: 850px;
+    min-height: 450px;
+    border-radius: 4px; 
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    display: flex;
+    overflow: hidden;
+  }
+  
+  /* --- Lado Esquerdo --- */
+  .rolesSection {
+    flex: 1;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .buttonList {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+  
+  .roleButton {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    width: 100%;
+    padding: 12px 20px;
+    background-color: #e5e5e5; /* Cinza claro dos botões */
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    color: var(--text-main);
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
+  }
+  
+  .roleButton:hover {
+    background-color: #d4d4d4;
+    transform: translateX(4px); /* Animação suave para a direita ao passar o mouse */
+  }
+  
+  .userIcon {
+    width: 20px;
+    height: 20px;
+    color: #333333;
+  }
+  
+  /* --- Lado Direito --- */
+  .imageSection {
+    flex: 1;
+    background-color: #f9f9f9; /* Fundo levemente cinza do lado direito */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+  }
+  
+  .imageBox {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .illustration {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    object-fit: contain;
+  }

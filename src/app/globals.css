@@ -1,42 +1,23 @@
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  --bg-color: #d1e3ff;       /* Fundo azul claro */
+  --card-bg: #ffffff;        /* Fundo branco dos cards */
+  --text-main: #333333;      /* Cor do texto principal */
+  --text-muted: #666666;     /* Cor de texto secundário */
+  --primary-blue: #609dff;   /* Azul vibrante do botão de login */
+  --secondary-blue: #7c93ff; /* Azul mais escuro dos botões da Home */
+  --input-bg: #e2e2e2;       /* Fundo cinza dos inputs */
 }
 
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+body {
+  background-color: var(--bg-color);
+  /* Se você exportar o fundo com ondas do Figma, pode adicionar aqui: */
+  /* background-image: url('/bg-waves.svg'); */
+  /* background-size: cover; */
 }

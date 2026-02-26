@@ -1,0 +1,159 @@
+.container {
+    min-height: 100vh;
+    background-color: #dceaff; /* Fundo azul clarinho baseado na imagem */
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .adminCard {
+    width: 100%;
+    max-width: 1300px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    display: flex;
+    overflow: hidden;
+    height: 85vh;
+  }
+  
+  /* SIDEBAR LATERAL */
+  .sidebar {
+    width: 260px;
+    background-color: #f8fbff;
+    border-right: 1px solid #e2e8f0;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 1.5rem;
+  }
+  
+  .profileSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 2.5rem;
+    text-align: center;
+  }
+  .avatar {
+    width: 60px;
+    height: 60px;
+    background-color: #e2e8f0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #609dff;
+  }
+  .avatar svg { width: 32px; height: 32px; }
+  .sidebarTitle { font-size: 1.1rem; color: #333; font-weight: 600; }
+  
+  .menu { display: flex; flex-direction: column; gap: 8px; flex: 1; }
+  .menuItem {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    background: transparent;
+    border: none;
+    border-radius: 8px;
+    color: #64748b;
+    font-weight: 500;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .menuItem svg { width: 20px; height: 20px; }
+  .menuItem:hover { background-color: #eef2ff; color: #609dff; }
+  .menuItem.active { background-color: #eef2ff; color: #609dff; font-weight: 600; border-left: 4px solid #609dff; }
+  
+  .backBtn {
+    margin-top: auto;
+    padding: 12px;
+    background: white;
+    border: 1px solid #cbd5e0;
+    border-radius: 8px;
+    color: #4a5568;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  /* CONTEÚDO PRINCIPAL (DIREITA) */
+  .mainContent {
+    flex: 1;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    overflow-y: auto;
+    background-color: #fdfdfd;
+  }
+  
+  /* Seção Topo (Usuários) */
+  .topSection {
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+  }
+  .sectionHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 1rem;
+  }
+  .tabs { display: flex; gap: 1rem; }
+  .tab {
+    background: none; border: none; font-size: 1rem; color: #a0aec0; cursor: pointer; padding: 8px 16px; border-radius: 6px; font-weight: 600;
+  }
+  .tab.activeTab { background-color: #609dff; color: white; }
+  
+  .primaryBtn {
+    background-color: #609dff; color: white; border: none; padding: 10px 20px; border-radius: 6px; font-weight: 600; cursor: pointer;
+  }
+  .primaryBtnSmall {
+    background-color: #609dff; color: white; border: none; padding: 6px 12px; border-radius: 6px; font-weight: 600; cursor: pointer; font-size: 0.85rem;
+  }
+  
+  .searchArea { display: flex; align-items: center; gap: 10px; margin-bottom: 1.5rem; background: #f8fafc; padding: 8px 16px; border-radius: 8px; border: 1px solid #e2e8f0; width: fit-content; }
+  .searchIcon { width: 18px; height: 18px; color: #a0aec0; }
+  .searchInput { border: none; outline: none; background: transparent; font-size: 0.95rem; width: 200px; }
+  .searchBtn { background: #609dff; color: white; border: none; padding: 6px 16px; border-radius: 4px; font-weight: 600; cursor: pointer; }
+  
+  /* Grid Inferior (UBS e Médicos) */
+  .bottomGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+  .subCard {
+    background: white; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.5rem; box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+  }
+  .subCardHeader { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; }
+  .subCardTitle { display: flex; align-items: center; gap: 10px; }
+  .subCardTitle h3 { color: #333; font-size: 1.1rem; }
+  .subCardTitle svg { width: 24px; height: 24px; }
+  .miniSearch { display: flex; align-items: center; gap: 5px; background: #f8fafc; border: 1px solid #e2e8f0; padding: 4px 8px; border-radius: 6px; margin-left: 10px; }
+  .miniSearch input { border: none; background: transparent; outline: none; width: 100px; font-size: 0.85rem;}
+  .miniSearch svg { width: 14px; height: 14px; }
+  
+  /* Tabelas e Botões (Padrão) */
+  .table { width: 100%; border-collapse: collapse; text-align: left; }
+  .table th { padding: 12px; color: #718096; font-weight: 600; font-size: 0.9rem; border-bottom: 2px solid #edf2f7; }
+  .table td { padding: 12px; border-bottom: 1px solid #edf2f7; color: #4a5568; vertical-align: middle; }
+  
+  .medicoInfo { display: flex; flex-direction: column; }
+  .medicoInfo strong { color: #2d3748; }
+  .medicoInfo span { font-size: 0.8rem; color: #a0aec0; }
+  
+  .actionButtons { display: flex; gap: 8px; justify-content: center; }
+  .viewBtn, .editBtn, .deleteBtn { padding: 6px; border: none; border-radius: 6px; cursor: pointer; display: flex; align-items: center; justify-content: center; }
+  .viewBtn { background-color: #609dff; color: white; }
+  .editBtn { background-color: #609dff; color: white; }
+  .deleteBtn { background-color: #f87171; color: white; }
+  .actionButtons svg { width: 14px; height: 14px; }

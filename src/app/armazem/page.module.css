@@ -1,0 +1,179 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 2rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* 👈 Replicação: Padrão de fundo azul */
+    background-color: #d1e3ff;
+    /* background-image: url('/bg-waves.svg'); */ /* Descomente para usar a imagem de fundo */
+    /* background-size: cover; */
+  }
+  
+  .card {
+    /* 👈 Replicação: Estilo do card branco */
+    background-color: var(--card-bg, #ffffff);
+    width: 100%;
+    max-width: 1300px; /* Cartão mais largo para a tabela expansível */
+    min-height: 700px;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+  
+  .titleArea {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .backButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #333;
+    padding: 4px;
+  }
+  .backButton svg { width: 24px; height: 24px; }
+  
+  .title { font-size: 1.6rem; font-weight: 600; color: #333; text-transform: uppercase; }
+  
+  .newButton {
+    /* 👈 Replicação: Botão azul primário */
+    background-color: #609dff;
+    color: white;
+    border: none;
+    padding: 10px 24px;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  .newButton:hover { background-color: #4a82eb; }
+  
+  .mainContent { display: flex; flex-direction: column; gap: 2rem; flex: 1; }
+  
+  .tableSection {
+    flex: 1; 
+    display: flex;
+    flex-direction: column;
+    /* 👈 Replicação: Padrão de fundo cinza da tabela */
+    background-color: #fafafa;
+    border-radius: 8px;
+    padding: 1.5rem;
+    /* 👈 Replicação: Borda da tabela */
+    border: 1px solid #f0f0f0;
+  }
+  
+  .searchBar { display: flex; gap: 1rem; margin-bottom: 2rem; }
+  
+  .inputGroup {
+    display: flex;
+    flex: 1;
+    /* 👈 Replicação: Estilo do campo de entrada */
+    background-color: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    align-items: center;
+    padding-left: 12px;
+  }
+  .searchIcon { width: 18px; color: #999; }
+  .searchInput { flex: 1; border: none; padding: 12px; outline: none; font-size: 0.95rem; background: transparent; }
+  .searchButton {
+    background-color: #609dff;
+    color: white;
+    border: none;
+    padding: 0 24px;
+    height: 100%;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .filterButton {
+    background-color: white;
+    border: 1px solid #e0e0e0;
+    color: #555;
+    padding: 0 20px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 500;
+    cursor: pointer;
+  }
+  
+  /* Tabela e Badges */
+  .tableContainer { overflow-x: auto; }
+  .table { width: 100%; border-collapse: collapse; text-align: left; }
+  .table th { color: #777; font-weight: 500; padding-bottom: 1rem; border-bottom: 2px solid #eee; }
+  .table td { padding: 1.2rem 0; border-bottom: 1px solid #f0f0f0; color: #555; font-size: 0.95rem; }
+  .table td strong { color: #333; }
+  
+  .medNameCell { display: flex; align-items: center; gap: 12px; }
+  
+  /* Inovação: Estilo do botão de expandir */
+  .expandButton {
+    background: transparent;
+    border: 2px solid #ddd;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #888;
+    transition: all 0.2s;
+  }
+  .expandButton:hover { background-color: #f0f6ff; border-color: #609dff; color: #609dff; }
+  .expandButton.expanded { background-color: #609dff; border-color: #609dff; color: white; transform: rotate(90deg); }
+  .expandButton svg { width: 16px; height: 16px; }
+  
+  /* Inovação: Estilo da linha expansível */
+  .expandedRow { background-color: white; border-top: 2px solid #f0f6ff; }
+  .loteDetailsContainer { padding: 1.5rem 2rem; }
+  .loteDetailsContainer h3 { margin-bottom: 1rem; color: #004b93; font-weight: 600; font-size: 1.2rem; }
+  .loteTable { width: 100%; border-collapse: collapse; text-align: left; }
+  .loteTable th { color: #777; font-weight: 500; padding-bottom: 0.8rem; border-bottom: 1px solid #f5f5f5; }
+  .loteTable td { padding: 1rem 0; border-bottom: 1px solid #eee; color: #555; font-size: 0.9rem; }
+  .loteTable td strong { color: #333; }
+  
+  /* Inovação: Replicação e Padrão de Badges */
+  .badge {
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    display: inline-block;
+  }
+  .badgeWarning { background-color: #fff3cd; color: #856404; }
+  .badgeDanger { background-color: #ffeaea; color: #dc3545; }
+  .badgeSuccess { background-color: #e6f8ec; color: #198754; }
+  
+  /* Inovação: Replicação e Padrão de Botões de Ação */
+  .actionButtons { display: flex; gap: 6px; }
+  .viewBtn, .editBtn, .deleteBtn, .transferBtn, .printBtn { border: none; padding: 6px 8px; border-radius: 4px; cursor: pointer; color: white; transition: opacity 0.2s; display: flex; align-items: center; justify-content: center; }
+  .viewBtn { background-color: #609dff; }
+  .editBtn { background-color: #4CAF50; }
+  .deleteBtn { background-color: #ff8b8b; }
+  .transferBtn { background-color: #ff9800; }
+  .printBtn { background-color: #9c27b0; }
+  .viewBtn:hover, .editBtn:hover, .deleteBtn:hover, .transferBtn:hover, .printBtn:hover { opacity: 0.8; }
+  
+  /* Paginação replicada e inovada */
+  .paginationArea { margin-top: auto; padding-top: 1rem; color: #777; font-size: 0.85rem; display: flex; justify-content: space-between; align-items: center; }
+  .paginationControls { display: flex; gap: 4px; }
+  .pageBtn { background: transparent; border: 1px solid transparent; color: #609dff; padding: 6px 12px; font-size: 0.9rem; cursor: pointer; border-radius: 4px; transition: all 0.2s; }
+  .pageBtn:hover { border-color: #d0e3ff; background-color: #f0f6ff; }
+  .pageActive { background-color: #609dff; border-color: #609dff; color: white; font-weight: bold; }
+  .pageActive:hover { background-color: #4a82eb; border-color: #4a82eb; }

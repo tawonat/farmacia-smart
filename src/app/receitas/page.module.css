@@ -1,0 +1,343 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 2rem;
+  }
+  
+  .card {
+    background-color: var(--card-bg, #ffffff);
+    width: 100%;
+    max-width: 1100px; /* Cartão mais largo para a tabela */
+    min-height: 600px;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* --- Cabeçalho --- */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+  
+  .titleArea {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .backButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px;
+    transition: opacity 0.2s;
+  }
+  
+  .backButton:hover { opacity: 0.7; }
+  .backButton svg { width: 24px; height: 24px; }
+  
+  .title {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #333;
+  }
+  
+  .newButton {
+    background-color: #609dff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .newButton:hover { background-color: #4a82eb; }
+  
+  /* --- Estrutura Principal --- */
+  .mainContent {
+    display: flex;
+    gap: 2rem;
+    flex: 1;
+  }
+  
+  .tableSection {
+    flex: 2; /* Tabela ocupa mais espaço que a imagem */
+    display: flex;
+    flex-direction: column;
+    background-color: #fafafa; /* Fundo cinza bem claro igual ao print */
+    border-radius: 8px;
+    padding: 1.5rem;
+    border: 1px solid #f0f0f0;
+  }
+  
+  /* --- Barra de Busca --- */
+  .searchBar {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .inputGroup {
+    display: flex;
+    flex: 1;
+    background-color: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    overflow: hidden;
+    align-items: center;
+    padding-left: 12px;
+  }
+  
+  .searchIcon {
+    width: 18px;
+    height: 18px;
+    color: #999;
+  }
+  
+  .searchInput {
+    flex: 1;
+    border: none;
+    padding: 12px;
+    outline: none;
+    font-size: 0.95rem;
+  }
+  
+  .searchButton {
+    background-color: #609dff;
+    color: white;
+    border: none;
+    padding: 0 24px;
+    height: 100%;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .filterButton {
+    background-color: white;
+    border: 1px solid #e0e0e0;
+    color: #555;
+    padding: 0 20px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 500;
+    cursor: pointer;
+  }
+  
+  /* --- Tabela --- */
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+  }
+  
+  .table th {
+    color: #777;
+    font-weight: 500;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #eee;
+  }
+  
+  .table td {
+    padding: 1.2rem 0;
+    border-bottom: 1px solid #f0f0f0;
+    color: #555;
+    font-size: 0.95rem;
+  }
+  
+  .table td strong {
+    color: #333;
+  }
+  
+  /* --- Botões de Ação --- */
+  .actionButtons {
+    display: flex;
+    gap: 8px;
+  }
+  
+  .viewBtn, .deleteBtn {
+    border: none;
+    padding: 6px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.2s;
+  }
+  
+  .viewBtn { background-color: #609dff; }
+  .deleteBtn { background-color: #ff8b8b; }
+  
+  .viewBtn:hover, .deleteBtn:hover { opacity: 0.8; }
+  
+  /* --- Paginação --- */
+  .paginationArea {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+    padding-top: 1.5rem;
+  }
+  
+  .paginationInfo {
+    font-size: 0.85rem;
+    color: #777;
+  }
+  
+  .paginationControls {
+    display: flex;
+    gap: 4px;
+  }
+  
+  .pageBtn {
+    background: transparent;
+    border: none;
+    color: #609dff;
+    padding: 6px 12px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+  .pageActive {
+    background-color: #609dff;
+    color: white;
+    font-weight: bold;
+  }
+  
+  /* --- Ilustração --- */
+  .imageSection {
+    flex: 1;
+    display: flex;
+    align-items: flex-end; /* Alinha a imagem para baixo como no print */
+    justify-content: center;
+  }
+  
+  .illustration {
+    width: 100%;
+    max-width: 280px;
+    height: auto;
+    object-fit: contain;
+  }
+
+  /* ... Mantenha todo o seu CSS anterior acima ... */
+
+/* --- Modais (Janelas flutuantes) --- */
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo escuro transparente */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    backdrop-filter: blur(2px); /* Efeito de desfoque no fundo */
+  }
+  
+  .modalContent {
+    background-color: #ffffff;
+    padding: 2.5rem;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 450px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+    animation: slideUp 0.3s ease-out;
+  }
+  
+  @keyframes slideUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .modalContent h2 {
+    margin-bottom: 1.5rem;
+    color: #333;
+    font-size: 1.4rem;
+  }
+  
+  .modalForm {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .modalInput {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    outline: none;
+  }
+  
+  .modalInput:focus {
+    border-color: #609dff;
+  }
+  
+  .modalActions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+  
+  .cancelBtn {
+    background-color: transparent;
+    color: #666;
+    border: 1px solid #ccc;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.2s;
+  }
+  
+  .cancelBtn:hover {
+    background-color: #f5f5f5;
+  }
+  
+  .saveBtn {
+    background-color: #609dff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.2s;
+  }
+  
+  .saveBtn:hover {
+    background-color: #4a82eb;
+  }
+  
+  .modalDetails {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    color: #555;
+    font-size: 1.05rem;
+  }
+  
+  .modalDetails strong {
+    color: #333;
+  }

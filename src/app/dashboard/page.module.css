@@ -1,0 +1,222 @@
+.container {
+    display: flex;
+    min-height: 100vh;
+    background-color: #eef2f6; /* Fundo levemente azulado/cinza da imagem */
+    padding: 1.5rem;
+    gap: 1.5rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  /* --- SIDEBAR LATERAL --- */
+  .sidebar {
+    width: 260px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+  }
+  
+  .logoArea {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 2.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #f0f0f0;
+  }
+  
+  .avatar {
+    background: #f0f6ff;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+  }
+  
+  .logoTitle { font-size: 1.1rem; font-weight: 700; color: #333; margin: 0; }
+  .adminRole { font-size: 0.85rem; color: #888; }
+  
+  .navMenu { display: flex; flex-direction: column; gap: 0.5rem; flex: 1; }
+  
+  .navItem {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    border: none;
+    background: transparent;
+    color: #555;
+    font-weight: 500;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: left;
+    transition: all 0.2s;
+  }
+  
+  .navItem:hover { background: #f5f5f5; }
+  .active { background: #f0f6ff; color: #609dff; font-weight: 600; }
+  .icon { font-size: 1.2rem; }
+  
+  .sidebarBottom { margin-top: auto; text-align: center; }
+  .sidebarImage { width: 100%; max-width: 150px; opacity: 0.9; }
+  
+  /* --- CONTEÚDO PRINCIPAL --- */
+  .mainContent {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    animation: fadeIn 0.4s ease-out;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    padding: 1rem 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+  }
+  
+  .pageTitle { font-size: 1.4rem; color: #333; margin: 0; }
+  .dateSubtitle { font-size: 0.85rem; color: #888; margin-top: 4px; }
+  
+  .quickActions { display: flex; gap: 10px; }
+  .actionBtn {
+    background: #f0f6ff; color: #609dff; border: 1px solid #d0e3ff;
+    padding: 8px 16px; border-radius: 6px; cursor: pointer;
+    font-weight: 600; font-size: 0.85rem; transition: 0.2s;
+  }
+  .actionBtn:hover { background: #609dff; color: white; }
+  
+  /* --- KPIS (Métricas) --- */
+  .kpiGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+  }
+  
+  .kpiCard {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    border-top: 4px solid #f0f0f0;
+    transition: transform 0.2s;
+  }
+  .kpiCard:hover { transform: translateY(-3px); }
+  
+  /* Inovação: Borda colorida em cima de cada card */
+  .kpiCard:nth-child(1) { border-top-color: #609dff; }
+  .kpiCard:nth-child(2) { border-top-color: #4CAF50; }
+  .kpiCard:nth-child(3) { border-top-color: #ff9800; }
+  .kpiCard:nth-child(4) { border-top-color: #9c27b0; }
+  
+  .kpiTitle { font-size: 0.9rem; color: #777; font-weight: 500; margin: 0; }
+  .kpiValue { font-size: 2rem; color: #333; font-weight: 700; margin: 0; }
+  .kpiVariation { font-size: 0.8rem; color: #4CAF50; font-weight: 600; }
+  
+  /* --- ALERTA --- */
+  .alertBanner {
+    background: #fff8e1;
+    border-left: 5px solid #ffc107;
+    padding: 12px 20px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #856404;
+  }
+  .alertLink { margin-left: auto; background: none; border: none; font-weight: bold; color: #d39e00; cursor: pointer; }
+  .alertLink:hover { text-decoration: underline; }
+  
+  /* --- GRÁFICOS --- */
+  .chartsGrid {
+    display: grid;
+    grid-template-columns: 3fr 2fr; /* Gráfico de barras toma mais espaço */
+    gap: 1.5rem;
+  }
+  
+  .chartCard {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+  }
+  
+  .chartTitle { font-size: 1.1rem; color: #444; margin-bottom: 1.5rem; font-weight: 600; }
+  
+  /* Gráfico de Barras CSS */
+  .barChartContainer { display: flex; flex-direction: column; gap: 1rem; }
+  .barRow { display: flex; align-items: center; gap: 15px; }
+  .barLabel { width: 140px; font-size: 0.9rem; color: #555; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .barTrack { flex: 1; background: #f0f0f0; height: 12px; border-radius: 10px; overflow: hidden; }
+  .barFill { height: 100%; border-radius: 10px; transition: width 1s ease-out; }
+  .barValue { width: 40px; text-align: right; font-size: 0.9rem; color: #777; font-weight: 600; }
+  
+  /* Gráfico de Pizza CSS (A Mágica!) */
+  .pieChartWrapper { display: flex; align-items: center; gap: 2rem; }
+  .pieCircle {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    /* Define as "fatias" da pizza com base nas porcentagens */
+    background: conic-gradient(
+      #609dff 0% 32%, 
+      #4CAF50 32% 56%, 
+      #ffc107 56% 76%, 
+      #ff9800 76% 90%, 
+      #f44336 90% 100%
+    );
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.1);
+  }
+  .pieHole {
+    width: 80px;
+    height: 80px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
+  .pieTotal { font-size: 1.2rem; font-weight: bold; color: #333; }
+  
+  .pieLegend { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px; flex: 1; }
+  .pieLegend li { display: flex; align-items: center; font-size: 0.85rem; color: #555; }
+  .pieLegend li span:last-child { margin-left: auto; font-weight: bold; color: #333; }
+  .dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; margin-right: 8px; }
+  
+  /* --- SESSÃO INFERIOR --- */
+  .bottomGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+  
+  .simpleList { display: flex; flex-direction: column; gap: 12px; }
+  .listItem { display: flex; justify-content: space-between; padding-bottom: 8px; border-bottom: 1px solid #f5f5f5; font-size: 0.95rem; color: #555; }
+  
+  .warningCard { background: #fffcfc; border: 1px solid #ffeaea; }
+  .stockList { display: flex; flex-direction: column; gap: 10px; margin-bottom: 1rem; }
+  .stockItem { display: flex; justify-content: space-between; font-size: 0.9rem; color: #555; }
+  .warningBtn { width: 100%; background: #ffefef; color: #d32f2f; border: 1px solid #ffcdcd; padding: 10px; border-radius: 6px; font-weight: bold; cursor: pointer; transition: 0.2s; }
+  .warningBtn:hover { background: #d32f2f; color: white; }

@@ -1,0 +1,180 @@
+.container {
+    min-height: 100vh;
+    background-color: #f0f4f8; /* Fundo cinza bem clarinho */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* TOP BAR */
+  .topBar {
+    background-color: white;
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    z-index: 10;
+  }
+  .backButton {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: none;
+    border: none;
+    color: #555;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+  .backButton svg { width: 20px; height: 20px; }
+  .title { font-size: 1.4rem; font-weight: 700; color: #004b93; letter-spacing: 1px;}
+  .operatorInfo { display: flex; align-items: center; gap: 12px; color: #666; font-weight: 500;}
+  .avatar { width: 36px; height: 36px; background-color: #609dff; border-radius: 50%; }
+  
+  /* LAYOUT PRINCIPAL DO PDV */
+  .pdvLayout {
+    display: flex;
+    flex: 1;
+    padding: 1.5rem;
+    gap: 1.5rem;
+    overflow: hidden;
+  }
+  
+  /* PAINEL ESQUERDO (Carrinho) */
+  .leftPanel {
+    flex: 7; /* Ocupa mais espaço */
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .searchSection { position: relative; }
+  .searchBar {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 8px;
+    padding: 0 1rem;
+    height: 60px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border: 2px solid #609dff;
+  }
+  .icon { width: 24px; height: 24px; color: #609dff; margin-right: 12px; }
+  .searchInput {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: 1.2rem;
+    color: #333;
+  }
+  .searchResults {
+    position: absolute;
+    top: 65px;
+    left: 0;
+    right: 0;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    max-height: 300px;
+    overflow-y: auto;
+    z-index: 20;
+  }
+  .searchItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .searchItem:hover { background-color: #f0f6ff; }
+  .searchItemInfo { display: flex; flex-direction: column; gap: 4px; }
+  .searchItemInfo strong { color: #333; font-size: 1.1rem; }
+  .searchItemInfo span { color: #888; font-size: 0.85rem; }
+  .searchItemPrice { font-weight: bold; color: #4CAF50; font-size: 1.1rem; }
+  
+  /* Tabela Carrinho */
+  .cartSection {
+    flex: 1;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    overflow-y: auto;
+    max-height: calc(100vh - 200px);
+  }
+  .cartTable { width: 100%; border-collapse: collapse; }
+  .cartTable th {
+    background-color: #f8fafc;
+    color: #666;
+    padding: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    border-bottom: 2px solid #edf2f7;
+    position: sticky;
+    top: 0;
+  }
+  .cartTable td { padding: 1rem; border-bottom: 1px solid #edf2f7; color: #444; vertical-align: middle; }
+  
+  .itemName { display: flex; align-items: center; gap: 12px; }
+  .itemIndex { background-color: #edf2f7; color: #666; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; border-radius: 4px; font-weight: bold; font-size: 0.8rem; }
+  .itemName div { display: flex; flex-direction: column; }
+  .itemName strong { font-size: 1.05rem; color: #2d3748; }
+  .itemName small { color: #a0aec0; font-size: 0.8rem; }
+  
+  .qtyControl { display: flex; align-items: center; justify-content: center; gap: 10px; background: #edf2f7; width: fit-content; margin: 0 auto; padding: 4px 8px; border-radius: 6px; }
+  .qtyControl button { background: white; border: none; width: 24px; height: 24px; border-radius: 4px; cursor: pointer; font-weight: bold; color: #4a5568; }
+  .qtyControl span { font-weight: bold; width: 20px; text-align: center; }
+  
+  .deleteBtn { background: #fee2e2; color: #ef4444; border: none; padding: 8px; border-radius: 6px; cursor: pointer; transition: background 0.2s; }
+  .deleteBtn:hover { background: #fca5a5; }
+  
+  .emptyCart { text-align: center; padding: 4rem !important; color: #a0aec0; }
+  .emptyCart svg { margin-bottom: 1rem; color: #cbd5e0; }
+  
+  /* PAINEL DIREITO (Checkout) */
+  .rightPanel {
+    flex: 3; /* Ocupa menos espaço */
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .checkoutBox { background: white; border-radius: 8px; padding: 1.5rem; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+  .boxTitle { margin-bottom: 1.2rem; font-size: 1.1rem; color: #2d3748; font-weight: 700; border-bottom: 1px solid #edf2f7; padding-bottom: 0.8rem; }
+  
+  .inputGroup { display: flex; flex-direction: column; gap: 6px; margin-bottom: 1rem; }
+  .inputGroup label { font-size: 0.9rem; color: #4a5568; font-weight: 500; }
+  .receitaLabel { display: flex; align-items: center; gap: 6px; color: #004b93 !important; font-weight: bold !important; }
+  .inputGroup input { padding: 10px 12px; border: 1px solid #cbd5e0; border-radius: 6px; font-size: 1rem; outline: none; transition: border 0.2s; }
+  .inputGroup input:focus { border-color: #609dff; }
+  
+  .paymentMethods { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .payBtn { padding: 12px; background: #f8fafc; border: 2px solid #edf2f7; border-radius: 8px; font-weight: 600; color: #4a5568; cursor: pointer; transition: all 0.2s; font-size: 0.95rem; }
+  .payBtn:hover { border-color: #cbd5e0; }
+  .activePay { background: #ebf8ff; border-color: #609dff; color: #004b93; }
+  
+  .totalsBox { background: white; border-radius: 8px; padding: 1.5rem; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-top: auto; }
+  .totalRow { display: flex; justify-content: space-between; margin-bottom: 0.8rem; color: #718096; font-size: 1rem; }
+  .grandTotal { display: flex; justify-content: space-between; margin-top: 1rem; padding-top: 1rem; border-top: 2px dashed #cbd5e0; font-size: 1.5rem; font-weight: 800; color: #2d3748; }
+  .grandTotal span:last-child { color: #4CAF50; }
+  
+  .finishButton {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 1.5rem;
+    border-radius: 8px;
+    font-size: 1.3rem;
+    font-weight: 800;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+    transition: all 0.2s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .finishButton:hover:not(:disabled) { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4); }
+  .finishButton:disabled { background-color: #a5d6a7; cursor: not-allowed; transform: none; box-shadow: none; }
